@@ -20,11 +20,13 @@ const db = mysql.createConnection({
 });
 
 db.connect((err) => {
-    if (err) {
-        console.error('Error connecting to the database:', err.stack);
-        return;
-    }
-    console.log('Connected to the database.');
+  if (err) {
+    console.error(`Error connecting to MySQL: ${err.message}`);
+    process.exit(1);
+  
+  } else {
+    console.log('Connected to MySQL');
+  }
 });
 
 // User registration route
