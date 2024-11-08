@@ -5,12 +5,11 @@ FROM node:16
 WORKDIR /app
 
 # Copy package.json and install dependencies
-COPY package.json ./
+COPY backend/ .
 RUN npm install
 
 # Copy the rest of the application
-#COPY ../frontend /usr/src/app/frontend
-COPY ../frontend ./frontend
+COPY ../frontend .
 
 
 # Expose port 3000
