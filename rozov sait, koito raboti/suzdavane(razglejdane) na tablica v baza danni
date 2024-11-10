@@ -1,0 +1,20 @@
+OT DOKER DOSTUPVAM BAZAT S:
+
+mysql -u <username> -p //username = root; password = rootpassword defined v docker-compose.yml
+SHOW DATABASES; // pokazva bazite danni
+USE <database_name>; // izbirame tazi, koqto iskame da razgledame (tuk auth_db)
+SHOW TABLES; // pokazva tablicite v izbranata baza
+SELECT * FROM <table_name> LIMIT 10; // sudurjanie na tablicata
+
+
+
+
+ZA SUZDAVANE NA TABLICA V IZBRANA BAZA:
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,   -- Unique identifier for each record
+    full_name VARCHAR(255) NOT NULL,          -- Name of the user
+    email VARCHAR(255) NOT NULL UNIQUE,  -- Email address (unique, cannot be duplicated)
+    phone VARCHAR(20),            -- Phone number (can be left empty)
+    password VARCHAR(255) NOT NULL       -- Password (should be hashed in real-world scenarios)
+);
